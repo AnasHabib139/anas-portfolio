@@ -24,11 +24,11 @@ export const metadata: Metadata = {
   alternates: { canonical: '/' },
   title: 'Anas Habib — Software Engineer, Applied AI',
   description:
-    'Software Engineer specialising in applied AI, in Munich. Evaluated agents, agentic RAG and multimodal document automation, and the AWS infrastructure underneath.',
+    'Software Engineer in Munich. Full-stack products with production AI — agents, agentic RAG, evaluation and human-in-the-loop controls — on EU-hosted AWS.',
   openGraph: {
     title: 'Anas Habib — Software Engineer, Applied AI',
     description:
-      'Evaluated agents, agentic RAG and multimodal document automation on AWS. Munich, Germany.',
+      'Full-stack products with production AI: agents, agentic RAG and evaluation on AWS. Munich, Germany.',
     type: 'website',
     locale: 'en_GB',
     url: SITE_URL,

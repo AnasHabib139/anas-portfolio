@@ -14,9 +14,9 @@ describe('resume content', () => {
     expect(resume.experience[0].company).toBe('Redseven Entertainment GmbH');
   });
 
-  it('has three projects and nine skill groups', () => {
+  it('has three projects and ten skill groups', () => {
     expect(resume.projects).toHaveLength(3);
-    expect(resume.skills).toHaveLength(9);
+    expect(resume.skills).toHaveLength(10);
   });
 
   it('exposes contact links only — no form endpoint', () => {
