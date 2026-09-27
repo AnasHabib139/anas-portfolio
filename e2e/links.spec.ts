@@ -11,7 +11,7 @@ test.describe('outbound links', () => {
       })),
     );
 
-    expect(links.length, 'expected the project, publication and Boardd links').toBeGreaterThanOrEqual(5);
+    expect(links.length, 'expected the project and publication links').toBeGreaterThanOrEqual(4);
     for (const l of links) {
       // rel=noopener stops the opened page reaching back via window.opener.
       expect(l.rel, `${l.href} is missing noopener/noreferrer`).toContain('noopener');
@@ -65,14 +65,6 @@ test.describe('outbound links', () => {
     const opened = await popup;
     expect(opened.url()).toBe('https://github.com/AnasBaqai/InsightQL');
     await opened.close();
-  });
-
-  test('links Boardd to its live product', async ({ page }) => {
-    await page.goto('/');
-    const link = page.locator('#experience a[href*="boarddd"]');
-    await expect(link).toHaveCount(1);
-    await expect(link).toHaveAttribute('href', 'https://boarddd-frontend-murex.vercel.app/');
-    await expect(link).toContainText('Boardd');
   });
 });
 

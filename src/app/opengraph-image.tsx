@@ -192,8 +192,8 @@ export default function Image() {
                 textTransform: 'uppercase',
               }}
             >
-              <div style={{ display: 'flex' }}>Muhammad</div>
               <div style={{ display: 'flex' }}>Anas</div>
+              <div style={{ display: 'flex' }}>Habib</div>
             </div>
 
             <div

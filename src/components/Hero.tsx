@@ -9,8 +9,8 @@ export default function Hero() {
       <p className="eyebrow">{resume.eyebrow}</p>
 
       <h1 className="display-xl mt-6 max-w-[14ch]">
-        <span className="reveal-line"><span>Muhammad</span></span>
-        <span className="reveal-line"><span style={{ animationDelay: '0.1s' }}>Anas —</span></span>
+        <span className="reveal-line"><span>Anas</span></span>
+        <span className="reveal-line"><span style={{ animationDelay: '0.1s' }}>Habib —</span></span>
         <span className="reveal-line">
           <span style={{ animationDelay: '0.2s' }}>
             <em className="emphasis">builds</em> AI systems

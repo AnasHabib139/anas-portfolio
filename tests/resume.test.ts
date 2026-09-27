@@ -9,8 +9,8 @@ describe('resume content', () => {
     ]);
   });
 
-  it('has four roles, most recent first', () => {
-    expect(resume.experience).toHaveLength(4);
+  it('has three roles, most recent first', () => {
+    expect(resume.experience).toHaveLength(3);
     expect(resume.experience[0].company).toBe('Redseven Entertainment GmbH');
   });
 
@@ -26,8 +26,8 @@ describe('resume content', () => {
 });
 
 describe('outbound links', () => {
-  // These URLs were extracted from the hyperlink annotations in the source CV
-  // PDF, not typed from memory. Keep them in sync with public/anas-cv.pdf.
+  // These URLs were extracted from the hyperlink annotations in an earlier CV
+  // PDF, not typed from memory.
   const EXPECTED = {
     InsightQL: 'https://github.com/AnasBaqai/InsightQL',
     bugSage: 'https://github.com/AnasBaqai/bugSage',
@@ -40,18 +40,6 @@ describe('outbound links', () => {
         EXPECTED[project.name as keyof typeof EXPECTED],
       );
     }
-  });
-
-  it('links Boardd to its live product', () => {
-    const boardd = resume.experience.find((r) => r.company === 'Boardd');
-    expect(boardd?.url).toBe('https://boarddd-frontend-murex.vercel.app/');
-  });
-
-  it('only links roles that actually have a public product', () => {
-    // The other three employers have no public URL; inventing one would be
-    // worse than omitting it.
-    const linked = resume.experience.filter((r) => r.url).map((r) => r.company);
-    expect(linked).toEqual(['Boardd']);
   });
 
   it('links the publication to its IEEE Xplore record', () => {

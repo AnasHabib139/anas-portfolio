@@ -3,7 +3,7 @@ import { resume } from '@/content/resume';
 const LINKS = [
   { label: 'Email', value: resume.contact.email, href: `mailto:${resume.contact.email}` },
   { label: 'Phone', value: resume.contact.phone, href: `tel:${resume.contact.phone.replace(/\s/g, '')}` },
-  { label: 'LinkedIn', value: 'anas-baqai-bo21', href: resume.contact.linkedin },
+  { label: 'LinkedIn', value: 'anashabib139', href: resume.contact.linkedin },
   { label: 'GitHub', value: 'AnasBaqai', href: resume.contact.github },
 ];
 

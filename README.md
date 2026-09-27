@@ -1,4 +1,4 @@
-# Muhammad Anas — Portfolio
+# Anas Habib — Portfolio
 
 **Live: [anasm.fyi](https://anasm.fyi)**
 
