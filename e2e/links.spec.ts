@@ -63,7 +63,7 @@ test.describe('outbound links', () => {
     // Bottom-right corner — nowhere near the link text.
     await page.mouse.click(box.x + box.width - 14, box.y + box.height - 14);
     const opened = await popup;
-    expect(opened.url()).toBe('https://github.com/AnasBaqai/InsightQL');
+    expect(opened.url()).toBe('https://github.com/AnasHabib139/InsightQL');
     await opened.close();
   });
 });

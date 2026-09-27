@@ -29,9 +29,9 @@ describe('outbound links', () => {
   // These URLs were extracted from the hyperlink annotations in an earlier CV
   // PDF, not typed from memory.
   const EXPECTED = {
-    InsightQL: 'https://github.com/AnasBaqai/InsightQL',
-    bugSage: 'https://github.com/AnasBaqai/bugSage',
-    'CLI Assistant': 'https://github.com/AnasBaqai/personal_cli_assistant',
+    InsightQL: 'https://github.com/AnasHabib139/InsightQL',
+    bugSage: 'https://github.com/AnasHabib139/bugSage',
+    'CLI Assistant': 'https://github.com/AnasHabib139/personal_cli_assistant',
   } as const;
 
   it('gives every project the repo link from the CV', () => {

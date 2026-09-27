@@ -4,7 +4,7 @@ const LINKS = [
   { label: 'Email', value: resume.contact.email, href: `mailto:${resume.contact.email}` },
   { label: 'Phone', value: resume.contact.phone, href: `tel:${resume.contact.phone.replace(/\s/g, '')}` },
   { label: 'LinkedIn', value: 'anashabib139', href: resume.contact.linkedin },
-  { label: 'GitHub', value: 'AnasBaqai', href: resume.contact.github },
+  { label: 'GitHub', value: 'AnasHabib139', href: resume.contact.github },
 ];
 
 export default function Contact() {
