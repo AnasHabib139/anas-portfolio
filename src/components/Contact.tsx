@@ -11,7 +11,7 @@ export default function Contact() {
   return (
     <section id="contact" className="relative z-[2] px-[6vw] py-24">
       <div className="mx-auto max-w-[1240px]">
-        <p className="eyebrow">Open to Full-Stack and AI roles</p>
+        <p className="eyebrow">Open to software engineering and applied AI roles</p>
         <h2 className="display-lg mt-4 mb-10">
           Let&rsquo;s <em className="emphasis">talk</em>
         </h2>

@@ -22,13 +22,13 @@ export const metadata: Metadata = {
   // Tells search engines which URL is the real one, so the Vercel preview
   // domains do not compete with anasm.fyi for the same content.
   alternates: { canonical: '/' },
-  title: 'Anas Habib — Full-Stack & AI Engineer',
+  title: 'Anas Habib — Software Engineer, Applied AI',
   description:
-    'Full-Stack and AI Engineer in Munich. Production LLM agents with tool calling and RAG, the services around them, and the AWS infrastructure underneath.',
+    'Software Engineer specialising in applied AI, in Munich. Evaluated agents, agentic RAG and multimodal document automation, and the AWS infrastructure underneath.',
   openGraph: {
-    title: 'Anas Habib — Full-Stack & AI Engineer',
+    title: 'Anas Habib — Software Engineer, Applied AI',
     description:
-      'Production LLM agents, tool calling, RAG, and the AWS infrastructure underneath. Munich, Germany.',
+      'Evaluated agents, agentic RAG and multimodal document automation on AWS. Munich, Germany.',
     type: 'website',
     locale: 'en_GB',
     url: SITE_URL,

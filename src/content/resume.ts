@@ -16,20 +16,21 @@ export interface Role {
   context?: string;
   location: string;
   period: string;
+  employment: 'Part-time' | 'Full-time';
   bullets: readonly string[];
 }
 
 export const resume = {
   name: 'Anas Habib',
-  role: 'Full-Stack & AI Engineer',
+  role: 'Software Engineer – Applied AI',
   location: 'Munich, Germany',
   // Work authorisation lives in the footer, not the hero: leading with it read
   // as pleading rather than as a qualification.
   eyebrow: 'Munich, Germany',
   summary:
-    'Full-stack & AI engineer. Production LLM agents with tool calling and RAG, the TypeScript and Python services around them, and the AWS infrastructure underneath.',
+    'Software engineer specialising in applied AI. Evaluated agents, agentic RAG and multimodal document automation with human-in-the-loop controls, built in Python, TypeScript, PostgreSQL and AWS.',
   metrics: [
-    { value: '2+', label: 'Years shipping' },
+    { value: '3+', label: 'Years engineering' },
     { value: '10h', label: 'Saved / week' },
     { value: '111', label: 'Licensors priced' },
   ],
@@ -49,7 +50,7 @@ export const resume = {
       heading: 'Messy in, ',
       emphasis: 'schema',
       headingTail: ' out',
-      body: "HR emails and scanned receipts flow through extract, validate, store. What the model isn't sure about gets flagged for a human instead of quietly guessed at.",
+      body: "Scanned receipts flow through extract, validate, store. What the model isn't sure about gets flagged for a human instead of quietly guessed at.",
       chips: ['Python', 'FastAPI', 'Structured output', 'PostgreSQL'],
       side: 'right',
     },
@@ -67,7 +68,7 @@ export const resume = {
       heading: 'Running in ',
       emphasis: 'production',
       headingTail: '',
-      body: 'Three internal apps at ProSiebenSat.1, a pricing engine across 111 licensors, and a 200-endpoint platform. All on AWS, provisioned in Terraform, released on merge.',
+      body: 'Two production apps and an internal demo at ProSiebenSat.1, pricing across 111 licensors, and a 200-endpoint platform. All on AWS, provisioned in Terraform, released through CI/CD.',
       chips: ['ECS Fargate', 'Aurora', 'Terraform', 'GitLab CI/CD'],
       side: 'right',
     },
@@ -75,46 +76,49 @@ export const resume = {
 
   experience: [
     {
-      title: 'Full-Stack AI Engineer',
+      title: 'Software Engineer – Applied AI',
       company: 'Redseven Entertainment GmbH',
       context: 'ProSiebenSat.1 Group',
       location: 'Munich, Germany',
       period: 'Mar 2026 — Present',
+      employment: 'Part-time',
       bullets: [
-        'Reduced contract licensing and cost research from 30–60 minutes to one cited AI response, enabling rights teams to retrieve evidence without manual contract review',
-        'Built and shipped a pgvector RAG assistant across 100+ agreements within three months, using iterative query reformulation and evidence-backed citations',
-        'Saved 10+ staff hours per week by automating receipt entry for 50 employees, achieving 90% tax-code classification accuracy across 20 categories',
-        'Achieved 90% routing accuracy across three AI agents and 12 typed tools by implementing a fail-closed classifier for low-confidence requests',
-        'Caught a routing regression before production by gating releases on a 50-case evaluation suite; release candidates scored 0.85 against a 0.70 threshold',
-        'Protected finance workflows with human-approved proposals, permission revalidation before atomic database writes and end-to-end decision audit logs',
-        'Deployed two production AI platforms to AWS ECS Fargate using Docker, Terraform and CI/CD, with Braintrust tracing through the internal model gateway',
+        'Owned end-to-end delivery of a rights-clearance platform, partnering directly with rights, editorial and production teams to replace shared Excel workflows and reach production in roughly three months for 10–20 users',
+        'Built “Nellie,” a three-agent, 12-tool assistant with cross-session memory and agentic pgvector RAG over 100+ contracts, reducing an estimated 30–60-minute licensing lookup to one evidence-backed response',
+        'Gated AI releases on faithfulness and context recall using a 50-case evaluation suite; maintained scores near 0.85 against a 0.70 threshold and caught a real tool-routing regression before production',
+        'Designed human-in-the-loop write controls that revalidated every proposal before atomic PostgreSQL updates, blocked unsafe bulk actions and recorded approvals and rejections in an end-to-end audit trail',
+        'Built a multimodal receipt pipeline for approximately 50 users, reaching roughly 90% field-level accuracy across 20 tax-code categories and saving the finance team a reported 10+ hours per week',
+        'Replaced legacy pricing workflows by migrating 111 licensors into PostgreSQL and implementing live exchange rates, billing-rule parity and non-destructive Excel import/export compatible with existing processes',
+        'Deployed two production applications and one internal demo to AWS ECS Fargate using Docker, Terraform and GitLab CI/CD, with EU-hosted infrastructure, internal LLM routing and Braintrust tracing',
       ],
     },
     {
-      title: 'Full-Stack AI Engineer',
+      title: 'Software Engineer – Applied AI',
       company: 'Arcpeak',
       location: 'Munich, Germany',
       period: 'Aug 2025 — Feb 2026',
+      employment: 'Part-time',
       bullets: [
-        "Enabled the platform's first paying customers by shipping Stripe subscription billing with JWT/OAuth authentication",
-        'Produced prioritized client roadmaps by converting a 20-question intake into 10 AI-ranked opportunities, scored by expected savings and implementation effort',
-        'Improved recommendation reliability by grounding timelines and budgets in client inputs and cited web research, then evaluating each release against a baseline with an LLM reviewer',
-        'Preserved multi-minute report jobs across interrupted sessions with Redis Streams while streaming completed sections to users in real time',
-        'Cut deployment time 80% with Terraform-provisioned AWS and automated CI/CD across Python/FastAPI and React/TypeScript',
-        'Caught invalid agent tool calls before deployment by adding Pytest release gates for backend and AI workflows',
+        "Built a personalized AI strategy agent that converted each client's 20-question intake into 10 tailored use cases, ranked by expected savings and implementation effort",
+        'Grounded recommendations, budgets and timelines in client data and cited web research, then evaluated every release against a fixed baseline with an LLM reviewer',
+        "Enabled the platform's first paying customers by delivering Stripe subscriptions and JWT/OAuth authentication across a Python/FastAPI and React/TypeScript application",
+        'Kept multi-minute AI report jobs recoverable across interrupted sessions using Redis Streams, while streaming each completed section to users in real time',
+        'Reduced deployment time by 80% through Docker, Terraform-provisioned AWS infrastructure and automated CI/CD',
+        'Prevented invalid agent tool calls from reaching production by adding Pytest release gates for backend services and AI workflows',
       ],
     },
     {
-      title: 'Backend Engineer',
+      title: 'Software Engineer',
       company: 'WorkSpin',
       location: 'Remote — Karachi, Pakistan',
       period: 'Jul 2023 — Jul 2025',
+      employment: 'Full-time',
       bullets: [
-        'Scaled a multi-tenant workspace backend to 200+ REST endpoints while enforcing tenant isolation through scoped data access and company-level permissions',
-        'Consolidated eight bespoke task integrations into one shared import framework, processing hundreds of tasks asynchronously with provider-specific rate limits and retries',
-        'Reduced query latency 70% and peak database load 50% by redesigning MongoDB schemas and introducing Redis caching',
-        'Separated payment operations into a dedicated microservice integrating Stripe Connect, Treasury and Issuing for multi-party billing and card issuance',
-        'Enabled concurrent multi-user editing with Socket.IO conflict handling, presence and a configurable company-level permission engine',
+        'Owned the backend of a feature-complete multi-tenant workspace platform, building a 106,000-line Node.js/Express system spanning 47 Mongoose models, 52 migrations and 200+ REST endpoints',
+        'Unified imports from eight external platforms behind a reusable BullMQ architecture with bounded concurrency, provider-specific rate limits, retries and Socket.IO progress, tested on hundreds of tasks per run',
+        'Reduced query latency by 70% and peak database load by 50% on an event platform through MongoDB schema redesign, index tuning and Redis caching',
+        'Isolated payment operations behind a service-authenticated microservice integrating Stripe Connect, Treasury and Issuing for connected accounts, invoicing and virtual-card controls',
+        'Built real-time collaboration with Socket.IO conflict handling, presence and scoped rooms, backed by tenant-isolated data access and a per-company configurable permission engine',
       ],
     },
   ] as readonly Role[],
@@ -144,13 +148,15 @@ export const resume = {
   ],
 
   skills: [
-    { group: 'Languages', items: ['Python', 'TypeScript', 'JavaScript', 'SQL', 'Java'] },
-    { group: 'AI & LLM', items: ['OpenAI API', 'OpenAI Agents SDK', 'LangChain', 'AI Agents', 'Tool/Function Calling', 'RAG', 'Vector Databases (pgvector, Pinecone)', 'Prompt Engineering', 'PyTorch'] },
-    { group: 'Backend', items: ['Node.js', 'NestJS', 'Express', 'FastAPI', 'REST APIs', 'GraphQL', 'WebSockets (Socket.IO)', 'Prisma', 'TypeORM'] },
-    { group: 'Frontend', items: ['React', 'Next.js', 'Redux', 'Tailwind CSS', 'HTML/CSS'] },
-    { group: 'Databases', items: ['PostgreSQL', 'MongoDB', 'Redis'] },
-    { group: 'Cloud & DevOps', items: ['AWS (ECS Fargate, Aurora/RDS, S3, Secrets Manager)', 'Docker', 'Terraform', 'Kubernetes', 'GitLab CI/CD', 'GitHub Actions', 'Git'] },
-    { group: 'Practices', items: ['Agile/Scrum', 'Code Review', 'Unit Testing (Jest, Pytest)', 'CI/CD', 'Microservices'] },
+    { group: 'AI & LLM', items: ['AI Agents', 'Tool/Function Calling', 'Agentic RAG', 'Prompt Engineering', 'LLM Evaluation', 'LLM-as-Judge'] },
+    { group: 'AI Tooling', items: ['OpenAI API', 'LangChain', 'LangGraph', 'Braintrust'] },
+    { group: 'Languages', items: ['Python', 'TypeScript', 'JavaScript', 'SQL'] },
+    { group: 'Backend', items: ['FastAPI', 'NestJS', 'Node.js', 'Express', 'REST APIs', 'WebSockets'] },
+    { group: 'Frontend', items: ['React', 'Next.js', 'Redux', 'Tailwind CSS'] },
+    { group: 'Databases', items: ['PostgreSQL', 'MongoDB', 'Redis', 'pgvector', 'Pinecone'] },
+    { group: 'Cloud & DevOps', items: ['AWS (ECS Fargate, Aurora/RDS, S3, Secrets Manager)', 'Docker', 'Terraform', 'CI/CD'] },
+    { group: 'Testing & Practices', items: ['Pytest', 'Jest', 'Evaluation Suites', 'Code Review', 'Agile/Scrum'] },
+    { group: 'AI Development Tools', items: ['Claude Code', 'Cursor', 'GitHub Copilot', 'Codex'] },
   ],
 
   education: [
@@ -174,5 +180,5 @@ export const resume = {
   },
 
   languages: 'English (C1), German (A1)',
-  authorisation: 'Student visa, eligible for EU Blue Card',
+  authorisation: 'Eligible to apply for an EU Blue Card',
 } as const;
