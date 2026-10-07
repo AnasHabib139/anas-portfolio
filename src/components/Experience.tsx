@@ -14,7 +14,7 @@ export default function Experience() {
               <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
                 <h3 className="font-display text-xl font-extrabold tracking-tight">{role.title}</h3>
                 <span className="self-center border border-[var(--line)] px-2 py-0.5 font-body text-[11px] text-[var(--faint)]">
-                  {role.employment}
+                  {role.workMode}
                 </span>
                 {role.url ? (
                   <a

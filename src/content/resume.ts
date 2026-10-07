@@ -16,23 +16,23 @@ export interface Role {
   context?: string;
   location: string;
   period: string;
-  employment: 'Part-time' | 'Full-time';
+  workMode: 'Hybrid' | 'Remote';
   bullets: readonly string[];
 }
 
 export const resume = {
   name: 'Anas Habib',
-  role: 'Software Engineer – Applied AI',
+  role: 'Software Engineer',
   location: 'Munich, Germany',
   // Work authorisation lives in the footer, not the hero: leading with it read
   // as pleading rather than as a qualification.
   eyebrow: 'Munich, Germany',
   summary:
-    'Software engineer with 3+ years building full-stack products and 1+ year shipping production AI. React and Next.js frontends, TypeScript and Python APIs, and the agents, retrieval and evaluation behind them, on EU-hosted AWS.',
+    'Software engineer with 2+ years building full-stack products and 1+ year shipping production AI. React and Next.js frontends, TypeScript and Python APIs, and the agents, retrieval and evaluation behind them, on AWS.',
   metrics: [
-    { value: '3+', label: 'Years engineering' },
+    { value: '2+', label: 'Years engineering' },
     { value: '10h', label: 'Saved / week' },
-    { value: '111', label: 'Licensors priced' },
+    { value: '100+', label: 'Contracts indexed' },
   ],
 
   acts: [
@@ -51,7 +51,7 @@ export const resume = {
       emphasis: 'schema',
       headingTail: ' out',
       body: "Scanned receipts flow through extract, validate, store. What the model isn't sure about lands in a review screen for a person instead of being quietly guessed at.",
-      chips: ['Python', 'FastAPI', 'Structured output', 'PostgreSQL'],
+      chips: ['Multimodal LLM', 'JSON Schema', 'NestJS', 'React'],
       side: 'right',
     },
     {
@@ -59,8 +59,8 @@ export const resume = {
       heading: 'Tools, not ',
       emphasis: 'chat',
       headingTail: '',
-      body: 'A router reads the question and hands it to the specialist agent that can answer it. Twelve typed tools underneath. Agents propose changes; a person approves them, applied in one transaction, logged.',
-      chips: ['OpenAI API', 'Tool calling', 'Human-in-the-loop', 'NestJS'],
+      body: 'A router reads the question and hands it to one of three specialist agents. Agents propose changes; an authorized person confirms each one before it is saved.',
+      chips: ['OpenAI Responses API', 'Tool calling', 'Human-in-the-loop', 'NestJS'],
       side: 'left',
     },
     {
@@ -68,58 +68,57 @@ export const resume = {
       heading: 'Running in ',
       emphasis: 'production',
       headingTail: '',
-      body: 'Two production apps at ProSiebenSat.1, pricing across 111 licensors, and a 200-endpoint multi-tenant backend. EU-hosted on AWS, provisioned in Terraform, released through OIDC-backed CI/CD.',
-      chips: ['ECS Fargate', 'Aurora', 'Terraform', 'GitLab CI/CD'],
+      body: 'Three production apps at ProSiebenSat.1, an AI consulting platform with paying customers, and a multi-tenant workspace backend. All on AWS, shipped through automated CI/CD.',
+      chips: ['ECS Fargate', 'Docker', 'Terraform', 'GitLab CI/CD'],
       side: 'right',
     },
   ] as const satisfies readonly Act[],
 
   experience: [
     {
-      title: 'Software Engineer – Applied AI',
+      title: 'Software Engineer',
       company: 'Redseven Entertainment GmbH',
       context: 'ProSiebenSat.1 Group',
       location: 'Munich, Germany',
       period: 'Mar 2026 — Present',
-      employment: 'Part-time',
+      workMode: 'Hybrid',
       bullets: [
-        'Launched a production rights-clearance platform in three months with rights, editorial and production teams, replacing shared spreadsheets with a NestJS, Next.js and PostgreSQL workflow',
-        'Migrated 111 licensors into PostgreSQL with Excel-parity billing rules and daily exchange-rate updates, keeping clearance cost estimates current while preserving finance workbook imports and exports',
-        'Replaced an estimated 30–60-minute manual search per complex licensing question with a cited answer by combining three cost, clearance and policy agents with pgvector retrieval over 100+ contracts',
-        'Maintained AI faithfulness and context-recall scores around 0.85 against a 0.70 release gate across 50 cases; separate router tests reached 90% accuracy and caught a tool-routing regression before release',
-        'Prevented a wrong-licensor update during live use by placing dozens of AI-proposed changes behind human approval, revalidating scope before atomic writes and recording decisions in an audit trail',
-        'Saved finance a reported 10+ hours per week by combining multimodal receipt extraction at about 90% field-level accuracy with a German/English receipt-review UI in React, Redux and AG Grid for around 50 staff',
-        'Preserved VBA macros, buttons and dropdowns in three official .xlsm finance forms by patching raw OOXML instead of regenerating files; stamped sequential receipt numbers onto PDFs to remove manual numbering',
-        'Secured sensitive contract and finance data in company-controlled EU infrastructure through an internal LLM gateway, Entra ID sign-in and role-based approvals, deploying two production apps with ECS Fargate, Terraform and OIDC-backed GitLab CI/CD',
+        'Led full-stack development of three production apps using TypeScript, NestJS, Next.js, React and PostgreSQL on AWS, including a licensing platform for 30+ staff launched in three months',
+        'Built an AI assistant for rights and production teams that answers licensing cost questions in one step instead of a 30–60-minute manual search, using NestJS, the OpenAI Responses API and 3 specialist agents',
+        'Shipped a receipt-processing app for 50+ finance staff in React and NestJS, saving 10+ hours per week',
+        'Engineered an AI extraction pipeline that reads receipt images with a multimodal LLM into JSON-schema structured outputs, reaching 90% field-level accuracy across 20 country tax codes',
+        'Designed an agentic RAG pipeline on pgvector over 100+ contracts and policies, so every answer cites its source',
+        'Implemented an LLM evaluation pipeline in Braintrust that blocks any release below 70% faithfulness and context recall (scoring 85%), catching a routing bug before launch',
+        'Automated deployments with GitLab CI/CD, Docker and automated tests on AWS ECS Fargate, cutting deployment time by an estimated 70% and eliminating failed deploys',
+        'Developed a human-in-the-loop approval flow in React with RBAC, where authorized users confirm every AI-proposed change before it is saved, preventing an incorrect licensing update',
       ],
     },
     {
-      title: 'Software Engineer – Applied AI',
+      title: 'Software Engineer',
       company: 'Arcpeak',
       location: 'Munich, Germany',
       period: 'Aug 2025 — Feb 2026',
-      employment: 'Part-time',
+      workMode: 'Hybrid',
       bullets: [
-        "Enabled the platform's first paying customers with the founder by integrating Stripe subscriptions and JWT/OAuth sign-in into a FastAPI and React/TypeScript product",
-        'Converted a 20-question intake into 10 ranked AI opportunities grounded in cited research and projected savings versus effort, giving clients a decision-ready investment shortlist',
-        'Eliminated browser-triggered report restarts by persisting long-running jobs in Redis Streams and streaming completed sections into the React dashboard',
-        'Automated AWS releases with Docker, Terraform and CI/CD across ECS Fargate, RDS and ElastiCache, replacing manual deployment steps with repeatable launches',
-        'Gated AI recommendations with fixed-baseline LLM reviews and Pytest tool-call checks in CI, keeping budgets and timelines traceable to client answers and catching invalid agent actions before release',
+        'Led full-stack development of an AI consulting platform using Python, FastAPI, React, TypeScript and PostgreSQL, turning 20 client answers into 10 ranked AI opportunities',
+        'Integrated Stripe subscriptions and OAuth sign-in into the FastAPI platform, enabling its first paying customers',
+        'Developed a Python AI agent with live web search that turns each opportunity into a cited adoption plan',
+        'Architected a background job system with Redis Streams that keeps long AI reports running after users close the browser, streaming each section to the React dashboard',
+        'Automated agent release checks in CI with LLM evaluation and Pytest tool-call tests, stopping faulty releases',
       ],
     },
     {
       title: 'Software Engineer',
       company: 'WorkSpin',
-      location: 'Karachi, Pakistan / Remote',
-      period: 'Jul 2023 — Sep 2025',
-      employment: 'Full-time',
+      location: 'Barnet, UK',
+      period: 'Jun 2024 — Jul 2025',
+      workMode: 'Remote',
       bullets: [
-        "Architected Boardd's pre-launch backend with frontend and QA partners across 200+ REST endpoints, 47 tenant-scoped data models and 52 versioned migrations, supporting collaboration, integrations and billing",
-        'Unified imports from eight project-management platforms in BullMQ, testing hundreds of tasks per run while preserving assignees and task structure through rate-limited workers, retries and live progress',
-        'Built subscription billing, recurring invoices and spending-controlled cards for launch by isolating Stripe Connect, Treasury and Issuing in a service-authenticated payments API',
-        'Broadcast drag-and-drop task reordering and presence in real time over tenant-scoped Socket.IO rooms, with conflict handling for concurrent edits in shared workspaces',
-        'Enforced tenant-specific permissions and per-device token rotation for Boardd, allowing platform admins to revoke every company session immediately when disabling a tenant',
-        "Lowered query latency by 70% and peak database load by 50% on WorkSpin's event-discovery app through MongoDB schema redesign, index tuning and Redis caching",
+        'Led backend development of Boarddd, a multi-tenant business workspace, using Node.js, Express, MongoDB, Redis and Socket.IO on AWS, with frontend and QA engineers',
+        'Optimized MongoDB schemas, indexes and Redis caching, cutting query latency by 70% and peak load by 50%',
+        'Built a Node.js payments microservice behind service-to-service authentication on 3 Stripe products (Connect, Treasury, Issuing) for subscriptions, recurring invoices and virtual cards',
+        'Engineered integrations with 8 external tool APIs (Jira, Asana, Trello and more) on a fault-tolerant BullMQ job pipeline with rate limiting, retries and live progress',
+        'Designed a scalable real-time messaging backend with Socket.IO and MongoDB for group channels of 50+ members and direct messages, with threaded replies, reactions and paginated queries',
       ],
     },
   ] as readonly Role[],
@@ -129,41 +128,38 @@ export const resume = {
       name: 'InsightQL',
       url: 'https://github.com/AnasHabib139/InsightQL',
       tagline: 'AI Database Assistant',
-      body: "A Next.js and NestJS tool that lets non-technical users query a database by typing a question in plain English, using LangChain's SQL agent over OpenAI GPT. Gets people an answer roughly 3x faster than writing the SQL themselves.",
-      chips: ['Next.js', 'NestJS', 'LangChain', 'OpenAI GPT'],
+      body: 'A natural-language database assistant that lets non-technical users query three database engines (PostgreSQL, SQLite, MongoDB) in plain English through a LangChain SQL agent, with charts, CSV/Excel export and JWT-secured access.',
+      chips: ['Next.js', 'NestJS', 'LangChain', 'OpenAI', 'Docker'],
     },
     {
       name: 'bugSage',
       url: 'https://github.com/AnasHabib139/bugSage',
       tagline: 'AI Debugging Assistant',
-      body: 'A FastAPI chatbot that pulls relevant docs and past issues out of a Pinecone vector database (RAG) before answering, so its fixes for Express.js bugs match the code you are actually running.',
-      chips: ['FastAPI', 'Pinecone', 'RAG', 'PyTorch'],
+      body: "An AI debugging chatbot that retrieves relevant docs and past issues from a vector database before answering, so its Express.js fixes match the project's own code.",
+      chips: ['FastAPI', 'Pinecone', 'RAG'],
     },
     {
       name: 'CLI Assistant',
       url: 'https://github.com/AnasHabib139/personal_cli_assistant',
       tagline: 'Agentic Terminal Tool',
-      body: 'A Python assistant that runs entirely offline on a local model via Ollama, with an agentic loop that chains five tools together through function calling.',
+      body: 'A fully offline terminal assistant on a local model, with an agentic loop that chains five tools to complete multi-step tasks.',
       chips: ['Python', 'Ollama', 'Function calling'],
     },
   ],
 
   skills: [
-    { group: 'Languages', items: ['TypeScript', 'JavaScript', 'Python', 'SQL'] },
-    { group: 'AI & LLM', items: ['AI Agents', 'Tool/Function Calling', 'Agentic RAG', 'Prompt Engineering', 'LLM Evaluation', 'LLM-as-Judge'] },
-    { group: 'Backend', items: ['Node.js', 'Express', 'NestJS', 'FastAPI', 'REST APIs', 'WebSockets', 'BullMQ'] },
-    { group: 'AI Tooling', items: ['OpenAI API', 'LangChain', 'LangGraph', 'Braintrust'] },
-    { group: 'Frontend', items: ['React', 'Next.js App Router', 'Redux', 'AG Grid', 'Tailwind CSS', 'i18n'] },
-    { group: 'Data & ORMs', items: ['PostgreSQL', 'MongoDB', 'Redis', 'pgvector', 'Pinecone', 'Prisma', 'TypeORM', 'Mongoose'] },
-    { group: 'Cloud & DevOps', items: ['AWS (ECS Fargate, EC2, Aurora/RDS, S3, Secrets Manager)', 'Docker', 'Terraform', 'Git', 'GitLab CI/CD', 'GitHub Actions'] },
-    { group: 'Security', items: ['OAuth 2.0', 'JWT', 'RBAC', 'Microsoft Entra ID', 'Multi-tenant Isolation'] },
-    { group: 'Testing & Practices', items: ['Pytest', 'Jest', 'Evaluation Suites', 'Code Review', 'Agile/Scrum', 'Technical Documentation'] },
-    { group: 'AI Development Tools', items: ['Claude Code', 'Cursor', 'GitHub Copilot', 'Codex'] },
+    { group: 'Programming Languages', items: ['Python', 'TypeScript', 'JavaScript', 'SQL'] },
+    { group: 'Backend & Frameworks', items: ['Node.js', 'NestJS', 'FastAPI', 'Express', 'REST APIs', 'Socket.IO', 'BullMQ'] },
+    { group: 'Frontend', items: ['React', 'Next.js', 'Redux Toolkit', 'Tailwind CSS'] },
+    { group: 'Databases', items: ['PostgreSQL', 'MongoDB', 'Redis', 'pgvector'] },
+    { group: 'AI/ML', items: ['AI Agents', 'Agentic RAG', 'LLM Evaluation', 'Function Calling', 'OpenAI API', 'LangChain', 'LangGraph'] },
+    { group: 'Cloud & DevOps', items: ['AWS', 'Docker', 'Terraform', 'GitLab CI/CD'] },
+    { group: 'AI Tools', items: ['Claude Code', 'Cursor', 'GitHub Copilot', 'Codex'] },
   ],
 
   education: [
-    { school: 'University of Passau', degree: 'MSc in Computer Science', location: 'Passau, Germany', period: 'Oct 2024 — Expected Oct 2026' },
-    { school: 'National University of Computer and Emerging Sciences (FAST)', degree: 'BS in Software Engineering', location: 'Karachi, Pakistan', period: 'Aug 2020 — Jun 2024' },
+    { school: 'University of Passau', degree: 'MSc in Computer Science', location: 'Passau, Germany', period: 'Oct 2024 — Oct 2026' },
+    { school: 'FAST-NUCES', degree: 'BS in Software Engineering', location: 'Karachi, Pakistan', period: 'Aug 2020 — Jun 2024' },
   ],
 
   publication: {
@@ -181,6 +177,6 @@ export const resume = {
     cv: '/anas-cv.pdf',
   },
 
-  languages: 'English (C1), German (A1)',
+  languages: 'English (C1), German (A2)',
   authorisation: 'Eligible to apply for an EU Blue Card',
 } as const;
